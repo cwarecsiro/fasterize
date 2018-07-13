@@ -21,16 +21,17 @@ struct RasterInfo {
     ncol = raster.slot("ncols");
     ncold = ncol;
 
-    if(raster.slot("rotated")) {
-      Rcpp::stop("No current support for rotated rasters.");
+    //think this is buggy...
+    //if(raster.slot("rotated")) {
+      //Rcpp::stop("No current support for rotated rasters.");
       // Rcpp::S4 rotation = raster.slot("rotation");
       // Rcpp::NumericVector geotrans = rotation.slot("geotrans");
       // xres = geotrans[2];
       // yres = geotrans[4];
-    } else {
+    //} else {
     xres = (xmax - xmin)/ncol;
     yres = (ymax - ymin)/nrow;
-    }
+    //}
   }
 };
 
